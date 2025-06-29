@@ -2,19 +2,15 @@ package com.deliverytech.delivery_api.controller;
 
 import java.time.LocalDateTime;
 import java.util.Map;
-
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+
 
 
 
 @RestController
 public class HealthController {
 
-    @ResponseBody
     @GetMapping("/health")
     public Map<String, String> health() {
         return Map.of(
@@ -25,14 +21,13 @@ public class HealthController {
         );
     }
 
-    @ResponseBody
     @GetMapping("/info")
     public AppInfo info() {
         return new AppInfo(
             "Delivery Tech API",
             "1.0.0",
             "David",
-            "JDK 21",
+            "JDK 17",
             "Spring Boot 3.5.3"
         );
     }
